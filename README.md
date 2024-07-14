@@ -3,7 +3,7 @@ This depository contains a Matlab GPR model to predict kinetic energy density (K
 
 The model receives 6 scaled inputs - averaged over the simulation cell TF, TF p, TF p<sup>2</sup>, TF q p, TF q<sup>2</sup>, and rho V<sub>eff</sub> (see e.g. *J. Chem. Phys*., **159**, 234115 (2023) for a description of these features), and outputs the kinetic energy density averaged over the simulation cell. 
 
-A matlab-style GPR object obtain with fitrgp function is about 236 MB in size and is available from the authors at reasonable request.
+A matlab-style GPR object obtained with *fitrgp* function is about 236 MB in size and is available from the authors at reasonable request.
 The model provided here is a manual recoding of GPR equations that results in the same output as a model obtained with Matlab's *fitrgp* function while allowing export with much smaller variable sizes.
 
 The provided file saved_own_gpr_model.mat is a Matlab workspace file containing the following objects: 
