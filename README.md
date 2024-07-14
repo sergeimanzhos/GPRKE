@@ -16,5 +16,11 @@ The provided file saved_own_gpr_model.mat is a Matlab workspace file containing 
 
 'kparams' - parameters of the kernel.
 
-When using the model, the user is supposed to form the features using a DFT code of their choice, minmax scale them with values provided in the array minmaxinfo, call the GPR model to obtain averaged KED, and obtain the kinetic energy by multiplying the average KED by the volume of the cell.
-   
+When using the model, the user is supposed to form the features using a DFT code of their choice, minmax scale them with values provided in the array minmaxinfo to obtain **x** (where rows are instances and columnds are features), call the GPR model to obtain averaged KED, and obtain the kinetic energy by multiplying the average KED by the volume of the cell. The model is called as 
+
+    load('saved_own_gpr_model.mat', 'c', 'fitx', 'kparams')
+    kfcn = @(XN,XM,theta) theta(2)*exp(-sqrt(5)*pdist2(XN,XM)/theta(1)).*(1+sqrt(5)*pdist2(XN,XM)/theta(1)+(5/3)*(pdist2(XN,XM)/theta(1)).^2);% Matern52
+    Kall = kfcn(x,fitx,kparams); 
+    y = Kall*c; 
+
+then y is a vector containing cell-averaged KED at each **x**<sup>j<sup> of matrix **x**.
