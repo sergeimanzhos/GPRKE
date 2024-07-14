@@ -8,7 +8,7 @@ The model provided here is a manual recoding of GPR equations that results in th
 
 The provided file saved_own_gpr_model.mat is a Matlab workspace file containing the following objects: 
 
-'minmaxinfo' - a 6x2 array named that contains minimum (1st colummn) and maximum (2nd column) values of the features, to be used to scale the inputs before calling the model 
+'minmaxinfo' - a 6x2 array that contains minimum (1st colummn) and maximum (2nd column) values of the features, to be used to scale the inputs before calling the model 
 
 'c' - the vector of coefficients **c** of the GPR equation (whereby the output y(**x**) = sum_i c_i*k(**x**,**x**<sup>(i)</sup>) where i runs over training points) 
 
