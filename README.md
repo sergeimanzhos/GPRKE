@@ -8,7 +8,7 @@ The model provided here is a manual re-coding of GPR equations that results in t
 
 The provided file saved_own_gpr_model.mat is a Matlab workspace file containing the following objects: 
 
-'minmaxinfo' - a 6 x 2 array that contains minimum (1st colummn) and maximum (2nd column) values of the features, to be used to scale the inputs before calling the model 
+'minmaxinfo' - a 6 x 2 array that contains minimum (1st column) and maximum (2nd column) values of the features, to be used to scale the inputs before calling the model 
 
 'c' - the vector of coefficients **_c_** of the GPR equation (whereby the output _y_(**_x_**) = Σ<sub>_i_</sub> _c_<sub>_i_</sub> _k_(**_x_**,**_x_**<sup>(_i_)</sup><sub>train</sub>) where _i_ runs over _N_ training points) . It is computed as **_c_** = **_K_**<sup>-1</sup> **_f_** where **_K_** is the covariance matrix (with the noise parameter added on the diagonal) and **_f_** is the vector of target values at the training points. _k_(**_x_**,**_x_**') is the kernel.
 
