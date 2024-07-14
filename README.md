@@ -12,7 +12,7 @@ The provided file saved_own_gpr_model.mat is a Matlab workspace file containing 
 
 'c' - the vector of coefficients **c** of the GPR equation (whereby the output y(**x**) = sum_i c_i*k(**x**,**x**<sup>(i)</sup>) where i runs over N training points) 
 
-'fitx' - the matrix of **x**<sup>(i)</sup> (N x 6)
+'fitx' - the matrix of **x**<sup>(i)</sup> (of size N x 6)
 
 'kparams' - parameters of the kernel.
 
