@@ -1,5 +1,8 @@
 # GPRKE
 This depository contains a Matlab GPR model to predict kinetic energy density (KED) averaged over a unit cell of a material.
+A matlab-style GPR object is about 236 MB in size and is available from the authors at reasonable request.
+The model provided here is a manual recoding of GPR equations that we confirm results in the same output as a model obtained with Matlab's fitrgp function while allowing export with myuch smaller variable sizes.
+
 The file saved_model.mat can be read into a Matlab workspace. It contains 3 objects / variables: 
 1) a readme message
 2) an array named minmaxinfo which contains min (1st colummn) and max (2nd column) values of the features, to be used to scale the inputs before calling the model 
