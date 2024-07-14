@@ -23,4 +23,4 @@ When using the model, the user is supposed to form the features (i.e. cell-avera
     Kall = kfcn(x,fitx,kparams); 
     y = Kall*c; 
 
-then y is a vector containing cell-averaged KED at each **x**<sup>j<sup> of matrix **x**.
+then y is a vector containing cell-averaged KED at each **x**<sup>j</sup> (row of matrix **x**).
