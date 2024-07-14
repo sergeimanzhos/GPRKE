@@ -1,5 +1,5 @@
 # GPRKE
-This depository contains a Matlab GPR model to predict kinetic energy density (KED) averaged over a unit cell of a material.
+This depository contains a Matlab GPR model to predict kinetic energy density (KED) averaged over a unit cell of a material as well as the data used to train it.
 
 The model receives 6 scaled inputs - averaged over the simulation cell TF, TF p, TF p<sup>2</sup>, TF q p, TF q<sup>2</sup>, and rho V<sub>eff</sub> (see e.g. *J. Chem. Phys*., **159**, 234115 (2023) for a description of these features), and outputs the kinetic energy density averaged over the simulation cell. 
 
