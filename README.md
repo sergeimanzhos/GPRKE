@@ -23,6 +23,6 @@ When using the model, the user is advised to form the features (i.e. cell-averag
     Kall = kfcn(x,fitx,kparams); 
     y = Kall*c; 
 
-then y is a vector containing cell-averaged KED at each **_x_**<sup>_j_</sup> (row of matrix **_x_**).
+then y is a vector containing cell-averaged KED at each **_x_**<sup>_j_</sup> (row of matrix **_x_**). Atomic units are used.
 
 The file SI-data.xlsx contains the training data which are computed for 433 unary, binary, and ternary compounds of Li, Al, Mg, Si, As, Ga, Sb, Na, Sn, P, and In, at equilibrium and strained geometries. The data are computed with Abinit and local pseudopotentials. 
