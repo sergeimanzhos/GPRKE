@@ -16,7 +16,7 @@ The provided file saved_own_gpr_model.mat is a Matlab workspace file containing 
 
 'kparams' - parameters of the kernel.
 
-When using the model, the user is advised to form the features (i.e. cell-averaged TF, TF _p_, TF _p_<sup>2</sup>, TF _q p_, TF _q_<sup>2</sup>, and _ρ V_<sub>eff</sub>) using a DFT code of their choice (the user is advised to use the same local pseudopotentials as were used to produce the training data, which were LPP by the Carter group except for Na and Sn for which Legrain-Manzhos and Luder-Manzhos LPP were used), minmax scale them with values provided in the array minmaxinfo to obtain **x** (where rows are instances and columns are features), call the GPR model to obtain averaged KED, and obtain the kinetic energy by multiplying the average KED by the volume of the cell. The model is called as 
+When using the model, the user is advised to form the features (i.e. cell-averaged TF, TF _p_, TF _p_<sup>2</sup>, TF _q p_, TF _q_<sup>2</sup>, and _ρ V_<sub>eff</sub>) using a DFT code of their choice (the user is advised to use the same local pseudopotentials as were used to produce the training data), minmax scale them with values provided in the array minmaxinfo to obtain **x** (where rows are instances and columns are features), call the GPR model to obtain averaged KED, and obtain the kinetic energy by multiplying the average KED by the volume of the cell. The model is called as 
 
     load('saved_own_gpr_model.mat', 'c', 'fitx', 'kparams')
     kfcn = @(XN,XM,theta) theta(2)*exp(-sqrt(5)*pdist2(XN,XM)/theta(1)).*(1+sqrt(5)*pdist2(XN,XM)/theta(1)+(5/3)*(pdist2(XN,XM)/theta(1)).^2);% Matern52
@@ -25,4 +25,4 @@ When using the model, the user is advised to form the features (i.e. cell-averag
 
 then y is a vector containing cell-averaged KED at each **_x_**<sup>_j_</sup> (row of matrix **_x_**). Atomic units are used.
 
-The file SI-data.xlsx contains the training data which are computed for 433 unary, binary, and ternary compounds of Li, Al, Mg, Si, As, Ga, Sb, Na, Sn, P, and In, at equilibrium and strained geometries. The data are computed with Abinit and local pseudopotentials. 
+The file SI-data.xlsx contains the training data which are computed for 433 unary, binary, and ternary compounds of Li, Al, Mg, Si, As, Ga, Sb, Na, Sn, P, and In, at equilibrium and strained geometries. The data are computed with Abinit and local pseudopotentials. LPP by the Carter group were used except for Na and Sn for which Legrain-Manzhos and Luder-Manzhos LPP were used. 
